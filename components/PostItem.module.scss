@@ -1,0 +1,33 @@
+@use 'colors';
+@use 'mixins';
+@use 'sizes';
+
+.root {
+  @include mixins.bordered;
+
+  &:not(last-child) {
+    margin-bottom: sizes.$default-spacing;
+  }
+
+  h2:hover {
+    color: colors.$primary;
+    cursor: pointer;
+  }
+
+  p.meta {
+    text-transform: uppercase;
+    color: colors.$tertiary-text;
+    font-size: sizes.$small-font;
+  }
+
+  p.description {
+    text-align: justify;
+    color: colors.$secondary-text;
+    margin: sizes.$small-spacing 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: colors.$primary;
+  }
+}

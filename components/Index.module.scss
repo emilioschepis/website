@@ -1,0 +1,11 @@
+@use 'colors';
+@use 'mixins';
+@use 'sizes';
+
+.root {
+  @include mixins.max-width;
+
+  section:not(last-child) {
+    margin-bottom: sizes.$default-spacing;
+  }
+}

@@ -1,0 +1,28 @@
+@use 'colors';
+@use 'sizes';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: colors.$background;
+}
+
+p, a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Fugaz One', cursive;
+  font-size: sizes.$biggest-font;
+  color: colors.$primary-text;
+}
+
+h2 {
+  font-family: 'Fugaz One', cursive;
+  font-size: sizes.$big-font;
+  color: colors.$primary-text;
+}

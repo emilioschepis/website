@@ -1,0 +1,27 @@
+@use 'colors';
+@use 'mixins';
+@use 'sizes';
+
+.root {
+  @include mixins.max-width;
+
+  article {
+    h2 {
+      margin: sizes.$default-spacing 0;
+    }
+
+    p {
+      text-align: justify;
+      color: colors.$secondary-text;
+
+      &:not(:last-child) {
+        margin-bottom: sizes.$small-spacing;
+      }
+    }
+
+    a {
+      color: colors.$primary;
+      text-decoration: none;
+    }
+  }
+}

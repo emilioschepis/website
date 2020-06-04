@@ -1,0 +1,28 @@
+@use 'colors';
+@use 'mixins';
+@use 'sizes';
+
+.root {
+  @include mixins.bordered;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: colors.$primary-text;
+  }
+
+  p {
+    flex: 1;
+    overflow: scroll;
+    color: colors.$secondary-text;
+    margin: sizes.$small-spacing 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: colors.$primary;
+  }
+}

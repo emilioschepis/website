@@ -1,0 +1,10 @@
+@use 'colors';
+@use 'sizes';
+
+.root {
+  p {
+    margin-top: sizes.$small-spacing;
+    text-align: justify;
+    color: colors.$secondary-text;
+  }
+}

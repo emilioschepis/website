@@ -1,0 +1,14 @@
+@use 'colors';
+@use 'sizes';
+
+@mixin max-width {
+  max-width: sizes.$max-width;
+  margin: 0 auto;
+  padding: sizes.$default-spacing;
+}
+
+@mixin bordered {
+  border: 1px solid colors.$divider;
+  border-radius: 0.5rem;
+  padding: sizes.$default-spacing;
+}
