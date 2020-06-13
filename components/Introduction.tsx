@@ -19,6 +19,25 @@ const Introduction: React.FC = () => {
         I think that learning is a never ending process, and I&apos;d like to
         share interesting bits and helpful tutorials through this platform.
       </p>
+      <p>
+        If you&apos;d like to keep in touch you can find me on{' '}
+        <a
+          href="https://twitter.com/emilioschepis"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Twitter
+        </a>{' '}
+        and on{' '}
+        <a
+          href="https://github.com/emilioschepis"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        .
+      </p>
     </section>
   );
 };

@@ -7,4 +7,9 @@
     text-align: justify;
     color: colors.$secondary-text;
   }
+
+  a {
+    text-decoration: none;
+    color: colors.$primary;
+  }
 }
