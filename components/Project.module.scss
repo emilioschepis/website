@@ -16,7 +16,7 @@
 
   p {
     flex: 1;
-    overflow: scroll;
+    overflow: hidden;
     color: colors.$secondary-text;
     margin: sizes.$small-spacing 0;
   }
