@@ -3,9 +3,12 @@
 
 .root {
   p {
-    margin-top: sizes.$small-spacing;
     text-align: justify;
     color: colors.$secondary-text;
+    
+    &:not(:last-child) {
+      margin-bottom: sizes.$default-spacing;
+    }
   }
 
   a {

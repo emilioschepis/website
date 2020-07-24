@@ -15,7 +15,7 @@
       color: colors.$secondary-text;
 
       &:not(:last-child) {
-        margin-bottom: sizes.$small-spacing;
+        margin-bottom: sizes.$default-spacing;
       }
     }
 
