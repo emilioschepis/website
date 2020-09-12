@@ -11,9 +11,13 @@ body {
   background-color: colors.$background;
 }
 
-p, a {
+p, a, li {
   font-family: 'Montserrat', sans-serif;
   line-height: 2;
+}
+
+li {
+  margin-left: 2.5rem;
 }
 
 h1 {

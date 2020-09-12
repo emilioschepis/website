@@ -22,5 +22,9 @@
       color: colors.$primary;
       text-decoration: none;
     }
+
+    li {
+      color: colors.$secondary-text;
+    }
   }
 }
