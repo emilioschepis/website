@@ -1,12 +1,12 @@
 import Layout from 'components/Layout';
 import PostDetail from 'components/PostDetail';
-import { getPostById, getPosts } from 'lib/posts';
-import Post from 'models/Post';
+import { getPostContentById, getPosts } from 'lib/posts';
+import PostContent from 'models/PostContent';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
 type Props = {
-  post: Post;
+  post: PostContent;
 };
 
 const PostPage: NextPage<Props> = ({ post }) => {
@@ -35,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const id = params.id as string;
-  const post = getPostById(id);
+  const post = getPostContentById(id);
 
   return {
     props: {

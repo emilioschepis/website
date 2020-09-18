@@ -1,10 +1,10 @@
 import ReactMarkdown from 'react-markdown';
 import styles from './PostDetail.module.scss';
-import Post from 'models/Post';
+import PostContent from 'models/PostContent';
 import Code from './Code';
 
 type Props = {
-  post: Post;
+  post: PostContent;
 };
 
 const PostDetail: React.FC<Props> = ({ post }) => {
