@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link href="/">
+              <Link passHref href="/">
                 <a
                   className={classNames({
                     [styles.active]: pathname.match(/^\/$/),
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/blog">
+              <Link passHref href="/blog">
                 <a
                   className={classNames({
                     [styles.active]: pathname.match(/^\/blog(?:\/[^/]*\/?)?$/),
