@@ -3,6 +3,7 @@ import Layout from 'components/Layout';
 import fs from 'fs';
 import { getPosts } from 'lib/posts';
 import generateRss from 'lib/rss';
+import generateSitemap from 'lib/sitemap';
 import Post from 'models/Post';
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
@@ -35,8 +36,10 @@ const BlogPage: NextPage<Props> = ({ posts }) => {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = getPosts().sort((a, b) => b.date.localeCompare(a.date));
   const rss = generateRss(posts);
+  const sitemap = generateSitemap(posts);
 
   fs.writeFileSync('./public/rss.xml', rss);
+  fs.writeFileSync('./public/sitemap.xml', sitemap);
 
   return {
     props: {
