@@ -6,10 +6,6 @@ export default class extends Document {
       <Html lang="en">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-          <link
             rel="alternate"
             type="application/rss+xml"
             title="RSS feed for blog posts"
