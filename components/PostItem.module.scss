@@ -9,9 +9,14 @@
     margin-bottom: sizes.$default-spacing;
   }
 
-  h2:hover {
-    color: colors.$primary;
-    cursor: pointer;
+  a.title {
+    font-family: 'Fugaz One', cursive;
+    font-size: sizes.$big-font;
+    color: colors.$primary-text;
+
+    &:hover {
+      color: colors.$primary;
+    }
   }
 
   p.meta {

@@ -11,8 +11,8 @@ const PostItem: React.FC<Props> = ({ post }) => {
 
   return (
     <article className={styles.root}>
-      <Link href="/blog/[id]" as={`/blog/${post.id}`}>
-        <h2>{post.title}</h2>
+      <Link href={`/blog/${encodeURIComponent(post.id)}`}>
+        <a className={styles.title}>{post.title}</a>
       </Link>
       <p className={styles.meta}>
         {post.tags.join(', ')} &mdash; {date.toLocaleDateString()}
