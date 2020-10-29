@@ -18,7 +18,7 @@ const PostItem: React.FC<Props> = ({ post }) => {
         {post.tags.join(', ')} &mdash; {date.toLocaleDateString()}
       </p>
       <p className={styles.description}>{post.description}</p>
-      <Link passHref href={`/blog/${encodeURIComponent(post.id)}`}>
+      <Link href={`/blog/${encodeURIComponent(post.id)}`}>
         <a>Read more</a>
       </Link>
     </article>
