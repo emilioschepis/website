@@ -1,15 +1,9 @@
-import { NextPage, GetStaticProps } from 'next';
+import { NextPage } from 'next';
 import Head from 'next/head';
-import Layout from 'components/Layout';
-import Index from 'components/Index';
-import Repository from 'models/Repository';
-import { getRepositories } from 'lib/repositories';
 
-type Props = {
-  repositories: Repository[];
-};
+import Layout from '@/layouts/Layout';
 
-const IndexPage: NextPage<Props> = ({ repositories }) => {
+const IndexPage: NextPage = () => {
   return (
     <>
       <Head>
@@ -23,21 +17,9 @@ const IndexPage: NextPage<Props> = ({ repositories }) => {
           content="Emilio Schepis, Blog, Website, Open source, Development, Software"
         />
       </Head>
-      <Layout>
-        <Index repositories={repositories} />
-      </Layout>
+      <Layout />
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const repositories = (await getRepositories()).filter((r) => !r.fork);
-
-  return {
-    props: {
-      repositories,
-    },
-  };
 };
 
 export default IndexPage;

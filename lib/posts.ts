@@ -1,8 +1,9 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import Post from 'models/Post';
-import PostContent from 'models/PostContent';
+import path from 'path';
+
+import PostContent from '@/models/PostContent';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 

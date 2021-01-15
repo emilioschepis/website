@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class extends Document {
   render(): JSX.Element {
@@ -6,14 +6,17 @@ export default class extends Document {
       <Html lang="en">
         <Head>
           <link
+            rel="preload"
+            href="/fonts/inter-v2-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
             rel="alternate"
             type="application/rss+xml"
             title="RSS feed for blog posts"
             href="https://emilioschepis.com/rss.xml"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@400;700&display=swap"
-            rel="stylesheet"
           />
         </Head>
         <body>

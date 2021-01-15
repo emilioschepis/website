@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/models/*": ["models/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/lib/*": ["lib/*"],
+      "@/pages/*": ["pages/*"],
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -20,7 +27,7 @@
     "jsx": "preserve"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
   ],
   "include": [
     "next-env.d.ts",

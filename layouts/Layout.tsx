@@ -1,12 +1,11 @@
-import styles from './Layout.module.scss';
-import Header from './Header';
+import Header from '@/components/Header';
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <>
+    <div>
       <Header />
       {children}
-    </>
+    </div>
   );
 };
 
