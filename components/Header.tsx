@@ -7,13 +7,13 @@ const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 h-16 z-50 bg-gray-50 border-b-2 flex justify-between items-center">
-      <p className="text-xl">Emilio Schepis</p>
+      <p className="text-lg font-bold">Emilio Schepis</p>
       <nav>
         <ul className="space-x-4">
           <li className="inline">
             <Link href="/">
               <a
-                className={cn({
+                className={cn('text-blue-700 hover:text-blue-500', {
                   'font-bold': pathname.match(/^\/$/),
                 })}
               >
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <li className="inline">
             <Link href="/blog">
               <a
-                className={cn({
+                className={cn('text-blue-700 hover:text-blue-500', {
                   'font-bold': pathname.match(/^\/blog(?:\/[^/]*\/?)?$/),
                 })}
               >

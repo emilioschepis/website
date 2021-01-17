@@ -15,11 +15,11 @@ const BlogRow: React.FC<BlogRowProps> = ({ post }) => {
   return (
     <Link href={`/blog/${encodeURIComponent(post.id)}`}>
       <a className="space-y-1">
-        <h2 className="text-2xl font-bold">{post.title}</h2>
+        <h2 className="text-xl font-bold text-blue-700">{post.title}</h2>
         <p className="text-gray-500">
-          {post.tags.join(', ')} &mdash; {date}
+          {date} &mdash; {post.tags.join(', ')}
         </p>
-        <p className="text-gray-800">{post.description}</p>
+        <p className="text-gray-900">{post.description}</p>
       </a>
     </Link>
   );
