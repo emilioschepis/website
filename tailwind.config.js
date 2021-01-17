@@ -6,7 +6,7 @@ module.exports = {
   darkMode: false,
   theme: {
     fontFamily: {
-      sans: ['Inter', ...fontFamily.sans],
+      sans: ['Karla', ...fontFamily.sans],
     },
   },
   variants: {

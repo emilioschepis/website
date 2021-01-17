@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/inter-v2-latin-regular.woff2') format('woff2'),
+@layer base {
+  @font-face {
+    font-family: 'Karla';
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: optional;
+    src: url('/fonts/karla.woff2') format('woff2');
+  }
+
+  body {
+    @apply bg-gray-50;
+  }
 }
