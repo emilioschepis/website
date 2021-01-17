@@ -1,42 +1,39 @@
+import cn from 'classnames';
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import classNames from 'classnames';
-import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
   const { pathname } = useRouter();
 
   return (
-    <header className={styles.root}>
-      <div className={styles.inner}>
-        <p className={styles.name}>Emilio Schepis</p>
-        <nav className={styles.nav}>
-          <ul>
-            <li>
-              <Link href="/">
-                <a
-                  className={classNames({
-                    [styles.active]: pathname.match(/^\/$/),
-                  })}
-                >
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a
-                  className={classNames({
-                    [styles.active]: pathname.match(/^\/blog(?:\/[^/]*\/?)?$/),
-                  })}
-                >
-                  Blog
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header className="sticky top-0 h-16 z-50 bg-gray-50 border-b-2 flex justify-between items-center">
+      <p className="text-xl">Emilio Schepis</p>
+      <nav>
+        <ul className="space-x-4">
+          <li className="inline">
+            <Link href="/">
+              <a
+                className={cn({
+                  'font-bold': pathname.match(/^\/$/),
+                })}
+              >
+                Home
+              </a>
+            </Link>
+          </li>
+          <li className="inline">
+            <Link href="/blog">
+              <a
+                className={cn({
+                  'font-bold': pathname.match(/^\/blog(?:\/[^/]*\/?)?$/),
+                })}
+              >
+                Blog
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

@@ -1,19 +1,16 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula';
-import styles from './Code.module.scss';
+import theme from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark';
 
-type Props = {
+type CodeProps = {
   language: string;
   value: string;
 };
 
-const Code: React.FC<Props> = ({ language = 'text', value }) => {
+const Code: React.FC<CodeProps> = ({ language = 'text', value }) => {
   return (
-    <div className={styles.root}>
-      <SyntaxHighlighter language={language} showLineNumbers style={darcula}>
-        {value}
-      </SyntaxHighlighter>
-    </div>
+    <SyntaxHighlighter language={language} showLineNumbers style={theme}>
+      {value}
+    </SyntaxHighlighter>
   );
 };
 

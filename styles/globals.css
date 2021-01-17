@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Karla';
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: optional;
+    src: url('/fonts/karla.woff2') format('woff2');
+  }
+
+  body {
+    @apply bg-gray-50;
+  }
+}

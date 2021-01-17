@@ -1,15 +1,17 @@
-import Layout from 'components/Layout';
-import PostDetail from 'components/PostDetail';
-import { getPostContentById, getPosts } from 'lib/posts';
-import PostContent from 'models/PostContent';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
 
-type Props = {
+import Code from '@/components/Code';
+import Layout from '@/components/Layout';
+import { getPostContentById, getPosts } from '@/lib/posts';
+import PostContent from '@/models/PostContent';
+
+type BlogPostPageProps = {
   post: PostContent;
 };
 
-const PostPage: NextPage<Props> = ({ post }) => {
+const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   return (
     <>
       <Head>
@@ -18,7 +20,10 @@ const PostPage: NextPage<Props> = ({ post }) => {
         <meta name="keywords" content={post.tags.join(', ')} />
       </Head>
       <Layout>
-        <PostDetail post={post} />
+        <article className="prose mx-auto">
+          <h1>{post.title}</h1>
+          <ReactMarkdown source={post.content} renderers={{ code: Code }} />
+        </article>
       </Layout>
     </>
   );
@@ -33,7 +38,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
+  params,
+}) => {
   const id = params.id as string;
   const post = getPostContentById(id);
 
@@ -44,4 +51,4 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   };
 };
 
-export default PostPage;
+export default BlogPostPage;
