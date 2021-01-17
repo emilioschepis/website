@@ -38,9 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
   const id = params.id as string;
   const post = getPostContentById(id);
 

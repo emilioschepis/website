@@ -8,9 +8,7 @@ import PostContent from '@/models/PostContent';
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 
 export const getPostIds = (): string[] =>
-  fs
-    .readdirSync(postsDirectory)
-    .map((fileName) => fileName.replace(/\.md$/, ''));
+  fs.readdirSync(postsDirectory).map((fileName) => fileName.replace(/\.md$/, ''));
 
 export const getPostById = (id: string): Post => {
   const fullPath = path.join(postsDirectory, `${id}.md`);

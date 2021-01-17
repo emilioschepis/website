@@ -8,9 +8,7 @@ type BlogRowProps = {
 };
 
 const BlogRow: React.FC<BlogRowProps> = ({ post }) => {
-  const date = useMemo(() => new Date(post.date).toLocaleDateString(), [
-    post.date,
-  ]);
+  const date = useMemo(() => new Date(post.date).toLocaleDateString(), [post.date]);
 
   return (
     <Link href={`/blog/${encodeURIComponent(post.id)}`}>
