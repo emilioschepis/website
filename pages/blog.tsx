@@ -20,7 +20,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
         <title>Blog &ndash; Emilio Schepis</title>
       </Head>
       <Layout>
-        <section className="max-w-prose mx-auto">
+        <section>
           <div className="prose mb-8">
             <h1>My blog posts ✏</h1>
           </div>

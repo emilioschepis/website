@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 
+import GitHub from '@/components/GitHub';
 import Layout from '@/components/Layout';
 
 const IndexPage: NextPage = () => {
@@ -10,7 +11,7 @@ const IndexPage: NextPage = () => {
         <title>Home &ndash; Emilio Schepis</title>
       </Head>
       <Layout>
-        <section className="prose mx-auto">
+        <section className="prose mx-auto mb-4">
           <h1>Hi, I&apos;m Emilio 👋🏻</h1>
           <p>
             I am a Software Engineer working in Monza, Italy. I am currently studying Systems and Networks Security at
@@ -37,6 +38,7 @@ const IndexPage: NextPage = () => {
             .
           </p>
         </section>
+        <GitHub />
       </Layout>
     </>
   );
