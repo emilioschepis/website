@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           <li className="inline">
             <Link href="/">
               <a
-                className={cn('text-blue-500', {
+                className={cn({
                   'font-bold': pathname.match(/^\/$/),
                 })}
               >
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <li className="inline">
             <Link href="/blog">
               <a
-                className={cn('text-blue-500', {
+                className={cn({
                   'font-bold': pathname.match(/^\/blog(?:\/[^/]*\/?)?$/),
                 })}
               >
