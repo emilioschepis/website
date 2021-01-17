@@ -1,5 +1,5 @@
 ---
-title: Learning the Go programming language by creating the Amanuense bot.
+title: Learning the Go programming language by creating the Amanuense bot
 description: How I created a voice-transcribing Telegram bot using Google's Speech-to-Text technology and Golang.
 tags: Telegram, Speech-to-Text, Golang, Go, Bot, Automation
 date: "2020-07-24T00:00:00.000Z"
