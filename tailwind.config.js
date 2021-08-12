@@ -3,7 +3,11 @@ module.exports = {
   purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
   darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Roboto"],
+      },
+    },
   },
   variants: {
     extend: {},
