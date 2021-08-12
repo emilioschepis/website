@@ -723,11 +723,9 @@ export type Biography = Node & {
   updatedAt: Scalars['DateTime'];
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
-  /** The title of the home page. */
-  title: Scalars['String'];
   slug: Scalars['String'];
-  /** The longer description for the biography. */
-  description: Scalars['String'];
+  /** The longer description to include in the biography. */
+  description: RichText;
   /** User that created this document */
   createdBy?: Maybe<User>;
   /** User that last updated this document */
@@ -735,7 +733,7 @@ export type Biography = Node & {
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   /** The image to display in the home page. */
-  image?: Maybe<Asset>;
+  image: Asset;
   /** List of Biography versions */
   history: Array<Version>;
 };
@@ -825,12 +823,10 @@ export type BiographyConnection = {
 export type BiographyCreateInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
-  /** title input for default locale (en) */
-  title: Scalars['String'];
   slug: Scalars['String'];
   /** description input for default locale (en) */
-  description: Scalars['String'];
-  image?: Maybe<AssetCreateOneInlineInput>;
+  description: Scalars['RichTextAST'];
+  image: AssetCreateOneInlineInput;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<BiographyCreateLocalizationsInput>;
 };
@@ -838,8 +834,7 @@ export type BiographyCreateInput = {
 export type BiographyCreateLocalizationDataInput = {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
-  title: Scalars['String'];
-  description: Scalars['String'];
+  description: Scalars['RichTextAST'];
 };
 
 export type BiographyCreateLocalizationInput = {
@@ -984,28 +979,21 @@ export enum BiographyOrderByInput {
   UpdatedAtDesc = 'updatedAt_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
   SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC'
+  SlugDesc = 'slug_DESC'
 }
 
 export type BiographyUpdateInput = {
-  /** title input for default locale (en) */
-  title?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   /** description input for default locale (en) */
-  description?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['RichTextAST']>;
   image?: Maybe<AssetUpdateOneInlineInput>;
   /** Manage document localizations */
   localizations?: Maybe<BiographyUpdateLocalizationsInput>;
 };
 
 export type BiographyUpdateLocalizationDataInput = {
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['RichTextAST']>;
 };
 
 export type BiographyUpdateLocalizationInput = {
@@ -1041,17 +1029,14 @@ export type BiographyUpdateManyInlineInput = {
 };
 
 export type BiographyUpdateManyInput = {
-  /** title input for default locale (en) */
-  title?: Maybe<Scalars['String']>;
   /** description input for default locale (en) */
-  description?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['RichTextAST']>;
   /** Optional updates to localizations */
   localizations?: Maybe<BiographyUpdateManyLocalizationsInput>;
 };
 
 export type BiographyUpdateManyLocalizationDataInput = {
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['RichTextAST']>;
 };
 
 export type BiographyUpdateManyLocalizationInput = {
@@ -1187,25 +1172,6 @@ export type BiographyWhereInput = {
   publishedAt_gt?: Maybe<Scalars['DateTime']>;
   /** All values greater than or equal the given value. */
   publishedAt_gte?: Maybe<Scalars['DateTime']>;
-  title?: Maybe<Scalars['String']>;
-  /** All values that are not equal to given value. */
-  title_not?: Maybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  title_in?: Maybe<Array<Scalars['String']>>;
-  /** All values that are not contained in given list. */
-  title_not_in?: Maybe<Array<Scalars['String']>>;
-  /** All values containing the given string. */
-  title_contains?: Maybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  title_not_contains?: Maybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  title_starts_with?: Maybe<Scalars['String']>;
-  /** All values not starting with the given string. */
-  title_not_starts_with?: Maybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  title_ends_with?: Maybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  title_not_ends_with?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   /** All values that are not equal to given value. */
   slug_not?: Maybe<Scalars['String']>;
@@ -1225,25 +1191,6 @@ export type BiographyWhereInput = {
   slug_ends_with?: Maybe<Scalars['String']>;
   /** All values not ending with the given string */
   slug_not_ends_with?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  /** All values that are not equal to given value. */
-  description_not?: Maybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  description_in?: Maybe<Array<Scalars['String']>>;
-  /** All values that are not contained in given list. */
-  description_not_in?: Maybe<Array<Scalars['String']>>;
-  /** All values containing the given string. */
-  description_contains?: Maybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  description_not_contains?: Maybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  description_starts_with?: Maybe<Scalars['String']>;
-  /** All values not starting with the given string. */
-  description_not_starts_with?: Maybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  description_ends_with?: Maybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  description_not_ends_with?: Maybe<Scalars['String']>;
   createdBy?: Maybe<UserWhereInput>;
   updatedBy?: Maybe<UserWhereInput>;
   publishedBy?: Maybe<UserWhereInput>;
@@ -2411,14 +2358,15 @@ export enum _SystemDateTimeFieldVariation {
 export type BiographyQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BiographyQuery = { __typename?: 'Query', biography?: Maybe<{ __typename?: 'Biography', title: string, description: string, image?: Maybe<{ __typename?: 'Asset', id: string, alt?: Maybe<string>, width?: Maybe<number>, height?: Maybe<number>, url: string }> }> };
+export type BiographyQuery = { __typename?: 'Query', biography?: Maybe<{ __typename?: 'Biography', description: { __typename?: 'RichText', html: string }, image: { __typename?: 'Asset', id: string, alt?: Maybe<string>, width?: Maybe<number>, height?: Maybe<number>, url: string } }> };
 
 
 export const BiographyDocument = gql`
     query Biography {
   biography(where: {slug: "biography"}) {
-    title
-    description
+    description {
+      html
+    }
     image {
       id
       alt

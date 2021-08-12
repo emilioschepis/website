@@ -1,7 +1,8 @@
 query Biography {
   biography(where: { slug: "biography" }) {
-    title
-    description
+    description {
+      html
+    }
     image {
       id
       alt
