@@ -39,6 +39,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       page,
       posts,
     },
+    revalidate: 3600,
   };
 };
 

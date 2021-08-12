@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       page,
       biography,
     },
+    revalidate: 3600,
   };
 };
 
