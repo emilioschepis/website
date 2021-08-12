@@ -1,0 +1,13 @@
+query Biography {
+  biography(where: { slug: "biography" }) {
+    title
+    description
+    image {
+      id
+      alt
+      width
+      height
+      url
+    }
+  }
+}
