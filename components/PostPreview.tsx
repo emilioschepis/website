@@ -36,7 +36,6 @@ const PostPreview = ({ post }: PostPreviewProps) => {
                 alt={post.cover.alt ?? undefined}
                 width={post.cover.width ?? undefined}
                 height={post.cover.height ?? undefined}
-                layout="responsive"
               />
             ) : (
               <Image src={placeholder} alt="Placeholder cover" />

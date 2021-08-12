@@ -36,7 +36,6 @@ const BlogPost: NextPage<BlogPostProps> = ({ page, post, source }) => {
               alt={post.cover.alt ?? undefined}
               width={post.cover.width ?? undefined}
               height={post.cover.height ?? undefined}
-              layout="responsive"
             />
           </div>
         ) : null}
