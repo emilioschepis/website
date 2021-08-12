@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Language, PostsQuery } from "../lib/graphql/generated";
-import imageLoader from "../lib/utils/imageLoader";
 import placeholder from "../public/placeholder.jpg";
 
 function flagByLanguage(language: Language): string {
@@ -33,11 +32,11 @@ const PostPreview = ({ post }: PostPreviewProps) => {
           <div aria-hidden className="h-32 flex justify-center items-center overflow-hidden border-b-2">
             {post.cover ? (
               <Image
-                loader={imageLoader}
                 src={post.cover.url}
                 alt={post.cover.alt ?? undefined}
                 width={post.cover.width ?? undefined}
                 height={post.cover.height ?? undefined}
+                layout="responsive"
               />
             ) : (
               <Image src={placeholder} alt="Placeholder cover" />

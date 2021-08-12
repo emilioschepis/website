@@ -8,7 +8,6 @@ import { serialize } from "next-mdx-remote/serialize";
 import PostLink, { PostLinkProps } from "../../components/PostLink";
 import client from "../../lib/graphql/client";
 import { PageQuery, PostQuery } from "../../lib/graphql/generated";
-import imageLoader from "../../lib/utils/imageLoader";
 
 // eslint-disable-next-line react/display-name
 const components = { a: (props: PostLinkProps) => <PostLink {...props} /> };
@@ -33,11 +32,11 @@ const BlogPost: NextPage<BlogPostProps> = ({ page, post, source }) => {
         {post.cover ? (
           <div className="flex justify-center items-center mb-4 rounded-lg overflow-hidden border-2">
             <Image
-              loader={imageLoader}
               src={post.cover.url}
               alt={post.cover.alt ?? undefined}
               width={post.cover.width ?? undefined}
               height={post.cover.height ?? undefined}
+              layout="responsive"
             />
           </div>
         ) : null}

@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import client from "../lib/graphql/client";
 import { BiographyQuery, PageQuery } from "../lib/graphql/generated";
-import imageLoader from "../lib/utils/imageLoader";
 
 export type HomeProps = {
   page: NonNullable<PageQuery["page"]>;
@@ -22,11 +21,11 @@ const Home: NextPage<HomeProps> = ({ page, biography }) => {
       <div className="flex flex-col space-y-4 m-4 lg:flex-row-reverse lg:space-y-0 lg:justify-between lg:items-center">
         <div className="flex-none w-full lg:w-1/3">
           <Image
-            loader={imageLoader}
             src={biography.image.url}
             alt={biography.image.alt ?? undefined}
             width={biography.image.width ?? undefined}
             height={biography.image.height ?? undefined}
+            layout="responsive"
             className="rounded-lg"
           />
         </div>
