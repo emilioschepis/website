@@ -1,6 +1,6 @@
 overwrite: true
 schema: ${NEXT_PUBLIC_GRAPHCMS_ENDPOINT}
-documents: "lib/graphql/*.graphql"
+documents: "lib/graphql/**/*.graphql"
 generates:
   lib/graphql/generated.ts:
     plugins:
