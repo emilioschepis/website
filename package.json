@@ -10,7 +10,9 @@
     "codegen": "graphql-codegen -r dotenv/config --config codegen.yml dotenv_config_path=.env.local"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
+    "dayjs": "^1.10.6",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "graphql": "^15.5.1",
     "graphql-request": "^3.5.0",

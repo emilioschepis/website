@@ -1,0 +1,15 @@
+query Posts {
+  posts(orderBy: createdAt_DESC) {
+    slug
+    title
+    subtitle
+    writtenAt
+    language
+    cover {
+      url
+      alt
+      width
+      height
+    }
+  }
+}
