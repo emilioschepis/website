@@ -3974,6 +3974,18 @@ export type PageQueryVariables = Exact<{
 
 export type PageQuery = { __typename?: 'Query', page?: Maybe<{ __typename?: 'Page', title: string, description?: Maybe<string>, keywords: Array<string> }> };
 
+export type PostQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type PostQuery = { __typename?: 'Query', post?: Maybe<{ __typename?: 'Post', title: string, subtitle?: Maybe<string>, writtenAt: any, keywords: Array<string>, content: string, cover?: Maybe<{ __typename?: 'Asset', url: string, alt?: Maybe<string>, width?: Maybe<number>, height?: Maybe<number> }> }> };
+
+export type PostSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PostSlugsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', slug: string }> };
+
 export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4023,6 +4035,30 @@ export const PageDocument = gql`
   }
 }
     `;
+export const PostDocument = gql`
+    query Post($slug: String!) {
+  post(where: {slug: $slug}) {
+    title
+    subtitle
+    writtenAt
+    keywords
+    cover {
+      url
+      alt
+      width
+      height
+    }
+    content
+  }
+}
+    `;
+export const PostSlugsDocument = gql`
+    query PostSlugs {
+  posts {
+    slug
+  }
+}
+    `;
 export const PostsDocument = gql`
     query Posts {
   posts(orderBy: createdAt_DESC) {
@@ -4059,6 +4095,12 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     Page(variables: PageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PageQuery>(PageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Page');
+    },
+    Post(variables: PostQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PostQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PostQuery>(PostDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Post');
+    },
+    PostSlugs(variables?: PostSlugsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PostSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PostSlugsQuery>(PostSlugsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'PostSlugs');
     },
     Posts(variables?: PostsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PostsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PostsQuery>(PostsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Posts');

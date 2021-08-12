@@ -1,0 +1,15 @@
+query Post($slug: String!) {
+  post(where: { slug: $slug }) {
+    title
+    subtitle
+    writtenAt
+    keywords
+    cover {
+      url
+      alt
+      width
+      height
+    }
+    content
+  }
+}

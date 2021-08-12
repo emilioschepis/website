@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -51,7 +52,7 @@ const PostPreview = ({ post }: PostPreviewProps) => {
               <p className="text-xl" aria-label={post.language}>
                 {flagByLanguage(post.language)}
               </p>
-              <p className="text-sm uppercase text-gray-700 italic">{post.writtenAt}</p>
+              <p className="text-sm uppercase text-gray-700 italic">{dayjs(post.writtenAt).format("LL")}</p>
             </div>
           </div>
         </article>
