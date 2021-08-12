@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
@@ -5,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto"],
+        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
       },
     },
   },
