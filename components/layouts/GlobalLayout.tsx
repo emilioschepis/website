@@ -1,5 +1,6 @@
 import type { ReactElement } from "react";
 
+import Footer from "../Footer";
 import Header from "../Header";
 
 export type GlobalLayoutProps = {
@@ -8,9 +9,10 @@ export type GlobalLayoutProps = {
 
 const GlobalLayout = ({ children }: GlobalLayoutProps) => {
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <Header />
-      <main>{children}</main>
+      <main className="flex-grow">{children}</main>
+      <Footer />
     </div>
   );
 };
