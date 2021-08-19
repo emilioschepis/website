@@ -27,7 +27,7 @@ const PostPreview = ({ post }: PostPreviewProps) => {
       <a>
         <article
           aria-labelledby={`${post.slug}-label`}
-          className="overflow-hidden rounded-lg border-2 hover:border-blue-600"
+          className="flex flex-col h-full overflow-hidden rounded-lg border-2 hover:border-blue-600"
         >
           <div aria-hidden className="h-32 flex justify-center items-center overflow-hidden border-b-2">
             {post.cover ? (
@@ -41,11 +41,13 @@ const PostPreview = ({ post }: PostPreviewProps) => {
               <Image src={placeholder} alt="Placeholder cover" />
             )}
           </div>
-          <div className="m-4 space-y-2">
+          <div className="flex flex-col flex-1 m-4 space-y-2">
             <h2 id={`${post.slug}-label`} className="text-xl font-bold">
               {post.title}
             </h2>
-            {post.subtitle ? <p className="text-gray-700 line-clamp-3">{post.subtitle}</p> : null}
+            <div className="flex-1">
+              {post.subtitle ? <p className="text-gray-700 line-clamp-3">{post.subtitle}</p> : null}
+            </div>
             <div className="flex items-center space-x-2">
               <p className="text-xl" aria-label={post.language}>
                 {flagByLanguage(post.language)}
