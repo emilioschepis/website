@@ -9,7 +9,7 @@ const Header = () => {
           <nav>
             <ul className="flex space-x-4">
               <NavItem href="/">Home</NavItem>
-              <NavItem href="/blog">Blog</NavItem>
+              <NavItem href="https://es.hashnode.dev/">Blog</NavItem>
             </ul>
           </nav>
         </div>
