@@ -4061,7 +4061,7 @@ export const PostSlugsDocument = gql`
     `;
 export const PostsDocument = gql`
     query Posts {
-  posts(orderBy: createdAt_DESC) {
+  posts(orderBy: writtenAt_DESC) {
     slug
     title
     subtitle
