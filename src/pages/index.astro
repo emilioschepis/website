@@ -3,7 +3,58 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home - Emilio Schepis">
-  <main></main>
+  <main
+    class="flex flex-col-reverse p-4 max-w-6xl mx-auto gap-4 md:flex-row md:items-center"
+  >
+    <div class="md:flex-[3]">
+      <h1 class="text-3xl font-sans font-bold">Emilio Schepis</h1>
+      <p class="text-gray-600 text-sm uppercase tracking-wider font-bold">
+        Software Engineer in Milan, Italy
+      </p>
+      <div class="mt-4 space-y-2 leading-6 text-gray-800">
+        <p>
+          Hi, I am Emilio. I have a degree in <b>systems & networks security</b>
+          and I&apos;m passionate about <b>software development</b> and <b
+            >creating digital products</b
+          >.
+        </p>
+        <p>
+          I have created many different <b>websites</b>, <b>
+            native and cross-platform mobile applications
+          </b> and <b>tools</b>. You can find some of them on my <a
+            href="https://github.com/emilioschepis"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-blue-600 font-semibold">GitHub profile</a
+          >.
+        </p>
+        <p>
+          I love participating in <b>hackathons</b>, and sometimes write about
+          them on <a
+            href="https://blog.emilioschepis.com/"
+            class="text-blue-600 font-semibold">my blog</a
+          >.
+        </p>
+      </div>
+      <div class="mt-2 space-x-1">
+        <a
+          href="https://twitter.com/emilioschepis"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="text-blue-600 font-semibold">Twitter</a
+        >
+        <a
+          href="https://github.com/emilioschepis"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="text-blue-600 font-semibold">GitHub</a
+        >
+      </div>
+    </div>
+    <picture class="md:flex-[2]">
+      <source srcset="/images/profile.webp" type="image/webp" />
+      <source srcset="/images/profile.jpg" type="image/jpeg" />
+      <img src="/images/profile.jpg" alt="Emilio Schepis" class="rounded-md" />
+    </picture>
+  </main>
 </Layout>
-
-<style></style>
