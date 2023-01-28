@@ -1,7 +1,0 @@
-query Home {
-  page(where: { slug: "home" }) {
-    title
-    description
-    keywords
-  }
-}

@@ -1,7 +1,0 @@
-query Blog {
-  page(where: { slug: "blog" }) {
-    title
-    description
-    keywords
-  }
-}
